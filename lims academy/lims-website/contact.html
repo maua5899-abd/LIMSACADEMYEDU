@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - LIMS ACADEMYy</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/FAVICON LOGO.png">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+          <a href="index.html"><img src="images/LIMS ACADEMY LOGO.png" alt="LIMS ACADEMY"></a>
+        <h1>LIMS ACADEMY</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="admission.html">Admission Form</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+<section id="contact" class="contact-page">
+<h2>Contact Us</h2>
+<form id="contactForm">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" required>
+
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required>
+
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="5" required></textarea>
+
+<button type="submit">Send Message</button>
+</form>
+<a href="https://wa.me/923339171384" target="_blank" class="whatsapp-btn">
+Chat With Us On WhatsApp</a>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2025 All Rights Reserved By LIMS ACADEMY | Developed by MUHAMMAD ABDULLAH.</p>
+</footer>
+
+<script>
+const form = document.getElementById("contactForm");
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Thank you! Your message has been sent.");
+    form.reset();
+});
+</script>
+
+</body>
+</html>

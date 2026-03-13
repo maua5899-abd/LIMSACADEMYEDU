@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LIMS Academy Admission Form</title>
+<link rel="icon" type="image/png" href="images/FAVICON LOGO.png">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f8fa;
+        padding: 20px;
+        color: #333;
+    }
+    .container {
+        background-color: white;
+        max-width: 700px;
+        margin: auto;
+        padding: 30px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+    h1 {
+        text-align: center;
+        color: #000000;
+        margin-bottom: 5px;
+    }
+    .date {
+        text-align: right;
+        margin-bottom: 20px;
+    }
+    h2 {
+        border-bottom: 2px solid #000000;
+        padding-bottom: 5px;
+        color: #000000;
+        margin-top: 30px;
+    }
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .radio-group,
+    .checkbox-group {
+        display: flex;
+        gap: 20px;
+        margin-top: 5px;
+    }
+    .radio-group label,
+    .checkbox-group label {
+        font-weight: normal;
+    }
+    textarea {
+        width: 100%;
+        height: 70px;
+        resize: vertical;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 8px;
+    }
+    .declaration {
+        margin-top: 30px;
+        font-style: italic;
+    }
+    .signature {
+        margin-top: 10px;
+        border-top: 1px solid #333;
+        width: 250px;
+        margin-bottom: 30px;
+    }
+    .office-use {
+        background-color: #e9ecef;
+        padding: 15px;
+        border-radius: 7px;
+    }
+    .office-use label {
+        font-weight: normal;
+    }
+    button {
+        background-color: #000000;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 25px;
+        width: 100%;
+    }
+    button:hover {
+        background-color: hsl(0, 71%, 60%);
+    }
+    button:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+    }
+    .success-message {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 20px;
+        display: none;
+        border: 1px solid #c3e6cb;
+    }
+    .error-message {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 20px;
+        display: none;
+        border: 1px solid #f5c6cb;
+    }
+    /* Additional styling for course radio buttons */
+    .course-options label {
+        font-weight: normal;
+        padding: 8px 0;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+    }
+    .course-options label:last-child {
+        border-bottom: none;
+    }
+    .course-options input[type="radio"] {
+        margin-right: 10px;
+        accent-color: #0056b3;
+    }
+    header {
+    position: sticky;
+    top: 0;
+    background-color: #f9fdff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px 0;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+header .logo img {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+header .logo h1 {
+    color: rgb(0, 0, 0);
+    margin: 0;
+    
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: rgb(4, 4, 4);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: hsl(0, 71%, 60%);
+}
+
+</style>
+</head>
+<header>
+    <div class="logo">
+          <a href="index.html"><img src="images/LIMS ACADEMY LOGO.png" alt="LIMS ACADEMY"></a>
+        <h1>LIMS ACADEMY</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="admission.html">Admission Form</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+
+<div class="container">
+    <h1>LIMS Academy</h1>
+    <h3 style="text-align:center; margin-top: -10px;">Admission Form</h3>
+    <p style="text-align:center; font-style: italic;">Please fill out this form completely and accurately.</p>
+    <form id="admissionForm" action="https://formspree.io/f/xojkldwa" method="POST">
+
+    <div class="date">
+        <label for="date">Date: </label>
+        <input type="date" id="date" name="date" />
+    </div>
+
+    <form id="admissionForm">
+        <h2>Personal Information</h2>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required />
+
+        <label for="fatherName">Father's Name:</label>
+        <input type="text" id="fatherName" name="fatherName" required />
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="cnic">CNIC / B-Form No:</label>
+        <input type="text" id="cnic" name="cnic" required />
+
+        <label>Gender:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="Female" required /> Female</label>
+            <label><input type="radio" name="gender" value="Male" /> Male</label>
+        </div>
+
+        <label>Marital Status:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="maritalStatus" value="Single" required /> Single</label>
+            <label><input type="radio" name="maritalStatus" value="Married" /> Married</label>
+        </div>
+
+        <h2>Parent / Guardian Information</h2>
+        <label for="parentFatherName">Father's Name:</label>
+        <input type="text" id="parentFatherName" name="parentFatherName" />
+
+        <label for="parentFatherOccupation">Occupation:</label>
+        <input type="text" id="parentFatherOccupation" name="parentFatherOccupation" />
+
+        <label for="parentFatherContact">Contact Number:</label>
+        <input type="text" id="parentFatherContact" name="parentFatherContact" />
+
+        <label for="parentMotherName">Mother's Name:</label>
+        <input type="text" id="parentMotherName" name="parentMotherName" />
+
+        <label for="parentMotherOccupation">Occupation:</label>
+        <input type="text" id="parentMotherOccupation" name="parentMotherOccupation" />
+
+        <label for="parentMotherContact">Contact Number:</label>
+        <input type="text" id="parentMotherContact" name="parentMotherContact" />
+
+        <h2>Contact Information</h2>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+
+        <label for="mobile">Mobile No:</label>
+        <input type="text" id="mobile" name="mobile" required />
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required />
+
+        <h2>Education Background</h2>
+        <label for="lastQualification">Last Qualification:</label>
+        <input type="text" id="lastQualification" name="lastQualification" />
+
+        <label for="instituteName">Institute Name:</label>
+        <input type="text" id="instituteName" name="instituteName" />
+
+        <label for="yearOfPassing">Year of Passing:</label>
+        <input type="number" id="yearOfPassing" name="yearOfPassing" min="1900" max="2099" step="1" />
+
+        <label for="reasonToJoin">Why do you want to join this course?</label>
+        <textarea id="reasonToJoin" name="reasonToJoin"></textarea>
+
+        <h2>Course Applied For</h2>
+        <div class="course-options">
+            <label><input type="radio" name="course" value="Digital Marketing" required /> Digital Marketing</label>
+            <label><input type="radio" name="course" value="Freelancing" /> Freelancing</label>
+            <label><input type="radio" name="course" value="UX Design" /> UX Design</label>
+            <label><input type="radio" name="course" value="Web Development" /> Web Development</label>
+            <label><input type="radio" name="course" value="Canva Editing" /> Canva Editing</label>
+            <label><input type="radio" name="course" value="Video Editing" /> Video Editing</label>
+            <label><input type="radio" name="course" value="IT Basics" /> IT Basics</label>
+            <label><input type="radio" name="course" value="SEO" /> SEO</label>
+            <label><input type="radio" name="course" value="Graphic Designing" /> Graphic Designing</label>
+            <label><input type="radio" name="course" value="Data Entry & MS Excel" /> Data Entry & MS Excel</label>
+        </div>
+
+        <div class="declaration">
+            <p><strong>Declaration:</strong></p>
+            <p>I hereby declare that the information provided above is true and correct. I shall abide by the rules and regulations of LIMS Academy.</p>
+        </div>
+
+        <label for="applicantSignature">Signature of Applicant:</label>
+        <div class="signature" id="applicantSignature"></div>
+
+        <label for="signatureDate">Date:</label>
+        <input type="date" id="signatureDate" name="signatureDate" required />
+
+        <h2>For Office Use Only</h2>
+        <div class="office-use">
+            <label for="admissionNumber">Admission Number:</label>
+            <input type="text" id="admissionNumber" name="admissionNumber" />
+
+            <label for="batchNumber">Batch Number:</label>
+            <input type="text" id="batchNumber" name="batchNumber" />
+
+            <label for="courseDuration">Course Duration:</label>
+            <input type="text" id="courseDuration" name="courseDuration" />
+
+            <label for="feeReceived">Fee Received:</label>
+            <input type="text" id="feeReceived" name="feeReceived" />
+
+            <label for="adminSignature">Admin Signature:</label>
+            <div class="signature" id="adminSignature"></div>
+        </div>
+
+        <button type="submit" id="submitBtn">Submit</button>
+
+        <!-- Success and Error Messages -->
+        <div id="successMessage" class="success-message">
+            ✅ Form submitted successfully! We have received your application and will contact you soon.
+        </div>
+        <div id="errorMessage" class="error-message">
+            ❌ There was an error submitting the form. Please try again.
+        </div>
+    </form>
+</div>
+
+<script>
+document.getElementById('admissionForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const successMsg = document.getElementById('successMessage');
+    const errorMsg = document.getElementById('errorMessage');
+    
+    // Disable submit button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    
+    // Hide previous messages
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+    
+    // Collect form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+
+        
+        if (response.ok) {
+            successMsg.style.display = 'block';
+            this.reset(); // Reset form
+        } else {
+            throw new Error('Submission failed');
+        }
+    } catch (error) {
+        errorMsg.style.display = 'block';
+        console.error('Error:', error);
+    } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit';
+    }
+});
+
+// Auto-fill current date
+document.getElementById('date').valueAsDate = new Date();
+document.getElementById('signatureDate').valueAsDate = new Date();
+</script>
+
+</body>
+</html>
